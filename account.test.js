@@ -15,7 +15,19 @@ describe('Account', () => {
     expect(account.transactions[1].date.toLocaleDateString('en-GB')).toEqual(expectedDate2);
     expect(account.transactions[1]).toEqual({ date: depositDate2, credit: 2000, balance: 3000 });
   });
+
+  it('should debit the specified amount and update the balance', () => {
+    const account = new Account();
+    const depositDate = new Date(2023, 0, 10);
+    account.deposit(1000, depositDate);
+    const debitDate = new Date(2023, 0, 14);
+    account.debit(500, debitDate);
+    const expectedDate = debitDate.toLocaleDateString('en-GB');
+    expect(account.transactions[1].date.toLocaleDateString('en-GB')).toEqual(expectedDate);
+    expect(account.transactions[1]).toEqual({ date: debitDate, credit: '', debit: 500, balance: 500 });
+  });
 });
+
 
 
 
