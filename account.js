@@ -9,6 +9,11 @@ class Account {
       this.balance += amount;// Update the balance
       this.transactions.push({ date, credit: amount, balance: this.balance });// Add transaction to the array
     }
+
+    debit(amount, date) {
+        this.balance -= amount;
+        this.transactions.push({ date, credit: '', debit: amount, balance: this.balance });
+    }
   
     formatDate(date) {
       const day = String(date.getDate()).padStart(2, '0');// Get the day of the month with leading zero
@@ -22,9 +27,11 @@ class Account {
       // Print transactions in reverse chronological order
       for (let i = this.transactions.length - 1; i >= 0; i--) {
         const transaction = this.transactions[i];
-        const { date, credit, balance } = transaction;
+        const { date, credit, debit, balance } = transaction;
         const formattedDate = this.formatDate(date);
-        console.log(`${formattedDate} || ${credit.toFixed(2)} || || ${balance.toFixed(2)}`);
+        const formattedCredit = credit ? credit.toFixed(2) : '';
+        const formattedDebit = debit ? debit.toFixed(2) : '';
+        console.log(`${formattedDate} || ${formattedCredit} || ${formattedDebit} || ${balance.toFixed(2)}`);
       }
     }
   }
@@ -32,11 +39,10 @@ class Account {
   const account = new Account();
   account.deposit(1000, new Date(2023, 0, 10));
   account.deposit(2000, new Date(2023, 0, 13));
+  account.debit(500, new Date(2023, 0, 14));
   account.printStatement();
   
   module.exports = Account;
-  
-  //
   
   
   
