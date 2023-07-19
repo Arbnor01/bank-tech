@@ -2,6 +2,19 @@
 
 This is a simple banking application that allows users to interact with their bank accounts. The application provides features to make deposits, withdrawals, and generate account statements.
 
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Code Structure and Design](#code-structure-and-design)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Loading the Account Class in Node.js REPL](#loading-the-account-class-in-nodejs-repl)
+  - [Interacting with the Banking Application](#interacting-with-the-banking-application)
+- [Testing](#testing)
+- [Screenshots](#screenshots)
+
+
 ## Features
 
 - **Deposit:** Users can make deposits to their bank account by specifying the amount and date.
