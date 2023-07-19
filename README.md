@@ -13,6 +13,14 @@ This is a simple banking application that allows users to interact with their ba
 - JavaScript
 - Node.js
 
+## Code Structure and Design
+
+The banking application consists of two classes: Account and Statement.
+
+- Account: This class manages the bank account, including the ability to make deposits, withdrawals, and generate an account statement. It maintains a list of transactions.
+- Statement: This class is responsible for generating the account statement based on the list of transactions from the Account class.
+The separation of concerns between these classes allows for a clear and modular code structure. The Account class handles account-related operations, while the Statement class focuses on generating the account statement.
+
 ## Installation
 
 To use the banking application, follow these steps:
@@ -90,6 +98,12 @@ To run the tests for the banking application, use the following command:
 npm run test
 ```
 This command will execute the test suite and display the test results, including coverage information.
+
+## Screenshots
+
+![Screenshot](Screenshot%202023-07-19%20at%2015.22.02.png)
+
+
 
 
 
