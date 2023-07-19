@@ -82,5 +82,14 @@ account.printStatement();
 ```
 This will display the statement in the console, showing the transactions in reverse chronological order, including the date, credit amount, debit amount, and the current balance.
 
+### Testing
+
+To run the tests for the banking application, use the following command:
+
+```shell
+npm run test
+```
+This command will execute the test suite and display the test results, including coverage information.
+
 
 
