@@ -58,6 +58,19 @@ describe('Account', () => {
       '10/01/2023 || 1000.00 ||  || 1000.00',
     ]);
   });
+
+  it('should format the date correctly', () => {
+    const account = new Account();
+    const date1 = new Date(2023, 0, 10);
+    const date2 = new Date(2023, 1, 13); 
+    const date3 = new Date(2023, 1, 14); 
+    const formattedDate1 = account.formatDate(date1);
+    const formattedDate2 = account.formatDate(date2);
+    const formattedDate3 = account.formatDate(date3);
+    expect(formattedDate1).toEqual('10/01/2023');
+    expect(formattedDate2).toEqual('13/02/2023');
+    expect(formattedDate3).toEqual('14/02/2023');
+  });
 });
 
 
