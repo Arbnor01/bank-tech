@@ -43,9 +43,3 @@ class Account {
   account.printStatement();
   
   module.exports = Account;
-  
-  
-  
-  
-  
-  
